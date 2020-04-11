@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" intial-scale="1.0">
+		<link rel="icon" href="/storage/emulated/0/Download/star.png">
+		<title>Counter</title>
+	</head>
+	<body>
+		<style type="text/css">
+			body{
+				background: url("/storage/emulated/0/Download/bwall.jpeg");
+			}
+			h1{
+				color: white;
+			}
+			.count{
+				text-align: center;
+				margin: 100px 40px 0px 40px;
+				height: 450px;
+				border: 2px groove white;
+				border-radius: 2%;
+				box-shadow: 0px 5px 30px black;
+			}
+			p{
+				font-size: 110px;
+				margin-top: 0px;
+			}
+			#two{
+				margin-bottom: 0px;
+				padding: 8px;
+				border-radius: 8%;
+				color: white;
+				background-color: hsl(220deg, 40%, 40%);
+				border-color: hsl(220deg, 40%, 40%);
+			}
+			#one{
+				margin-top: 0px;
+				padding: 8px;
+				border-radius: 8%;
+				color: white;
+				background-color: hsl(220deg, 40%, 40%);
+				border-color: hsl(220deg, 40%, 40%);
+			}
+			@media screen and (min-width: 480px) {
+				body{
+					background-size: cover;
+					background-repeat: no-repeat;
+				}
+				html{
+					min-height: 100%;
+				}
+			    .count{
+			    	width: 35%;
+			    	margin: 700px 0px 0px 300px;
+			    	padding: 20px;
+			    }
+			    p{
+			    	font-size: 180px;
+			    	margin-bottom: 40px;
+			    }
+			    button{
+			    	font-size: 20px;
+			    }
+		</style>
+		<div class="count">
+			<h1>COUNTER</h1>
+				<p id="num">0</p>
+				<button id="one" onclick="decNumber()">LOWER COUNT</button><br><br>
+				<button id="two" onclick="incNumber()">ADD COUNT</button>
+		</div>
+		<script type="text/javascript">
+			var i = 0;
+			function decNumber() {
+				var down = i--;
+				document.getElementById('num').innerHTML = i;
+				document.getElementById('one').style.backgroundColor = "blue";
+				document.getElementById('two').style.backgroundColor = "";
+				if (i < 0) {
+					document.getElementById('num').style.color = "red";
+				}
+				
+			}
+			function incNumber() {
+				var up = i++
+				document.getElementById('num').innerHTML = i;
+				document.getElementById('two').style.backgroundColor = "blue";
+				document.getElementById('one').style.backgroundColor = "";
+				if (i > 0) {
+					document.getElementById('num').style.color = "green";
+				}
+			}
+		</script>
+	</body>
+</html>
